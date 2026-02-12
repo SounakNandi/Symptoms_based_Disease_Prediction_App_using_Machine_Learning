@@ -10,8 +10,13 @@ NeuralCare-Symptom is a **Machine Learning-based desktop application** designed 
 
 Check out the demo to see the app in action (version 2):
 
-<video src="https://github.com/user-attachments/assets/f3678442-46ce-4e74-b1c0-08952da2441f" width=auto height="250" controls>
+<video src="https://github.com/user-attachments/assets/0a16cf72-f750-4c8e-9cee-b3b13ae513f1" width=auto height="250" controls>
 </video>
+<!-- <video src="https://github.com/user-attachments/assets/f3678442-46ce-4e74-b1c0-08952da2441f" width=auto height="250" controls>
+</video> -->
+
+
+
 
 ## 📌 Overview
 
