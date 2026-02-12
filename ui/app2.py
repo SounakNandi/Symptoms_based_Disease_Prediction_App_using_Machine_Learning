@@ -47,6 +47,8 @@ class NeuralCareSymptom(QMainWindow):
         self.sidebar_expanded = False
         self.sidebar_width = 175
         self.symptom_checks = {}
+        self.model = None
+        self.model_loaded = False
         
         # Window
         self.setWindowTitle('NeuralCare-Symptom')
@@ -580,6 +582,11 @@ class NeuralCareSymptom(QMainWindow):
             if s in self.symptoms_dict: v[self.symptoms_dict[s]] = 1
         
         df = pd.DataFrame([v], columns=list(self.symptoms_dict.keys()))
+        
+        if not self.model:
+            QMessageBox.critical(self, "Model Error", "The AI model could not be loaded. Please check your installation.")
+            return
+
         res = self.diseases_list.get(self.model.predict(df)[0], "Unknown")
         
         # Display data
@@ -703,7 +710,9 @@ class NeuralCareSymptom(QMainWindow):
             with open(model_path, 'rb') as f:
                 self.model = pickle.load(f)
             self.model_loaded = True
-        except: self.model_loaded = False
+        except Exception as e:
+            print(f"Error loading model from {model_path}: {e}")
+            self.model_loaded = False
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
