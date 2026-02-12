@@ -34,13 +34,3 @@ env/
 .idea/
 *.swp
 *.swo
-
-# Project Specific
-model.pkl
-data/*.csv
-!data/description.csv
-!data/precautions_df.csv
-!data/medications.csv
-!data/diets.csv
-!data/workout_df.csv
-!data/symtoms_df.csv
